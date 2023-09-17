@@ -1,0 +1,881 @@
+
+<!doctype html>
+<html lang="en" class="dark-theme">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--favicon-->
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+    <!--plugins-->
+    <link href="assets/plugins/notifications/css/lobibox.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <!-- loader-->
+    <link href="assets/css/pace.min.css" rel="stylesheet" />
+    <script src="assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <!-- Theme Style CSS -->
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CryptoStation - Dashboard</title>
+</head>
+
+<body>
+<!--wrapper-->
+<div class="wrapper">
+    <!--sidebar wrapper -->
+    <div class="sidebar-wrapper" data-simplebar="true">
+        <div class="sidebar-header">
+            <div>
+                <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+            </div>
+            <div>
+                <h4 class="logo-text">CryptoStation</h4>
+            </div>
+            <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+            </div>
+        </div>
+        <!--navigation-->
+        <ul class="metismenu" id="menu">
+            <li class="menu-label">Account</li>
+            <li>
+                <a href="dashboard/">
+                    <div class="parent-icon"><i class='bx bx-tachometer'></i>
+                    </div>
+                    <div class="menu-title">Dashboard</div>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard/deposits">
+                    <div class="parent-icon"><i class='bx bx-money'></i>
+                    </div>
+                    <div class="menu-title">Deposit</div>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard/affiliate">
+                    <div class="parent-icon"><i class='bx bx-group'></i>
+                    </div>
+                    <div class="menu-title">Affiliate program</div>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard/bonuses">
+                    <div class="parent-icon"><i class='bx bx-dice-3'></i>
+                    </div>
+                    <div class="menu-title">Bonuses</div>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/bot">
+                    <div class="parent-icon"><i class='bx bx-bot'></i>
+                    </div>
+                    <div class="menu-title">Telegram bot</div>
+                </a>
+            </li>
+            <li class="menu-label">Other</li>
+            <li>
+                <a href="/">
+                    <div class="parent-icon"><i class='bx bx-home'></i>
+                    </div>
+                    <div class="menu-title">Home</div>
+                </a>
+            </li>
+            <li>
+                <a href="/faq">
+                    <div class="parent-icon"><i class='bx bx-help-circle'></i>
+                    </div>
+                    <div class="menu-title">FAQ</div>
+                </a>
+            </li>
+            <li>
+                <a href="/affiliate">
+                    <div class="parent-icon"><i class='bx bx-group'></i>
+                    </div>
+                    <div class="menu-title">Affiliate program</div>
+                </a>
+            </li>
+            <li>
+                <a href="/about-us">
+                    <div class="parent-icon"><i class='bx bx-info-square'></i>
+                    </div>
+                    <div class="menu-title">About Us</div>
+                </a>
+            </li>
+            <li>
+                <a href="/terms">
+                    <div class="parent-icon"><i class='bx bx-text'></i>
+                    </div>
+                    <div class="menu-title">Terms</div>
+                </a>
+            </li>
+            <li>
+                <a href="/#statistics">
+                    <div class="parent-icon"><i class='bx bx-stats'></i>
+                    </div>
+                    <div class="menu-title">Statistics</div>
+                </a>
+            </li>
+            <li>
+                <a href="/#plans">
+                    <div class="parent-icon"><i class='bx bx-grid-alt'></i>
+                    </div>
+                    <div class="menu-title">Plans</div>
+                </a>
+            </li>
+            <li>
+                <a href="/contacts">
+                    <div class="parent-icon"><i class='bx bx-conversation'></i>
+                    </div>
+                    <div class="menu-title">Contacts</div>
+                </a>
+            </li>
+        </ul>
+        <!--end navigation-->
+    </div>
+    <!--end sidebar wrapper -->
+    <!--start header -->
+    <header>
+        <div class="topbar d-flex align-items-center">
+            <nav class="navbar navbar-expand">
+                <div class="mobile-toggle-menu"><i class="bx bx-menu"></i>
+                </div>
+                <div class="search-bar flex-grow-1">
+                    <div class="position-relative search-bar-box">
+
+                    </div>
+                </div>
+                <div class="top-menu ms-auto">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item mobile-search-icon">
+
+                        </li>
+                        <li class="nav-item dropdown dropdown-large">
+
+                            <div class="dropdown-menu dropdown-menu-end">
+
+                                <div class="header-notifications-list ps">
+
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown dropdown-large">
+
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <div class="header-message-list ps">
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                    <a type="button" class="btn btn-outline-secondary" href="/logout">Log out</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--end header --><!--start page wrapper -->
+    <div class="page-wrapper">
+        <div class="container pt-3">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-auto mt-2">
+                    <h1 class="page-header-title" style="word-break: break-all;">
+                        Hi, shchankin.danil 👋
+                    </h1>
+                </div>
+            </div>
+            <h6 class="mb-0 text-uppercase mt-3">Power distribution</h6>
+            <hr>
+            <style type="text/css">
+                .button_range_minus{
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 17px;
+                    padding: 0px 0px 0px 0px;
+                    outline: none !important;
+                }
+            </style>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 row-cols-xl-4">
+                <div class="col">
+                    <div class="card radius-10 bg-gradient-cosmic">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto">
+                                    <p class="mb-0 text-white">Binance Coin</p>
+                                    <h4 class="my-1 text-white"><span id="bnbBalance">0.0000000085996</span></h4>
+                                    <p class="mb-0 font-13 text-white">POWER <span id="bnbPower">0</span> GH/S</p>
+                                </div>
+                                <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=014" width="55">
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex"><button style="padding-right: 5px;" class="button_range_minus" onclick="rangeButton('bnb', '-')"><i class="fadeIn animated bx bx-caret-left-square"></i></button><input class="form-range" type="range" min="0" max="180" step="1" value="0" oninput="power('bnb')" onchange="update('bnb')" id="bnbRange"><button style="padding-left: 5px;" class="button_range_minus" onclick="rangeButton('bnb', '+')"><i class="fadeIn animated bx bx-caret-right-square"></i></button></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card radius-10 bg-gradient-moonlit">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto">
+                                    <p class="mb-0 text-white">Tron</p>
+                                    <h4 class="my-1 text-white"><span id="trxBalance">0.1300075747057</span></h4>
+                                    <p class="mb-0 font-13 text-white">POWER <span id="trxPower">0</span> GH/S</p>
+                                </div>
+                                <img src="https://cryptologos.cc/logos/tron-trx-logo.svg?v=014" width="55">
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex"><button style="padding-right: 5px;" class="button_range_minus" onclick="rangeButton('trx', '-')"><i class="fadeIn animated bx bx-caret-left-square"></i></button><input class="form-range" type="range" min="0" max="180" step="1" value="0" oninput="power('trx')" onchange="update('trx')" id="trxRange"><button style="padding-left: 5px;" class="button_range_minus" onclick="rangeButton('trx', '+')"><i class="fadeIn animated bx bx-caret-right-square"></i></button></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card radius-10 bg-gradient-ohhappiness">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto">
+                                    <p class="mb-0 text-white">Litecoin</p>
+                                    <h4 class="my-1 text-white"><span id="ltcBalance">0.0000000000000</span></h4>
+                                    <p class="mb-0 font-13 text-white">POWER <span id="ltcPower">0</span> GH/S</p>
+                                </div>
+                                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.svg?v=014" width="55">
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex"><button style="padding-right: 5px;" class="button_range_minus" onclick="rangeButton('ltc', '-')"><i class="fadeIn animated bx bx-caret-left-square"></i></button><input class="form-range" type="range" min="0" max="180" step="1" value="0" oninput="power('ltc')" onchange="update('ltc')" id="ltcRange"><button style="padding-left: 5px;" class="button_range_minus" onclick="rangeButton('ltc', '+')"><i class="fadeIn animated bx bx-caret-right-square"></i></button></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card radius-10 bg-gradient-ibiza">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-auto">
+                                    <p class="mb-0 text-white">Shiba Inu</p>
+                                    <h4 class="my-1 text-white"><span id="shibBalance">1.5584095103215</span></h4>
+                                    <p class="mb-0 font-13 text-white">POWER <span id="shibPower">0</span> GH/S</p>
+                                </div>
+                                <img src="https://cryptologos.cc/logos/shiba-inu-shib-logo.svg?v=014" width="55">
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex"><button style="padding-right: 5px;" class="button_range_minus" onclick="rangeButton('shib', '-')"><i class="fadeIn animated bx bx-caret-left-square"></i></button><input class="form-range" type="range" min="0" max="180" step="1" value="0" oninput="power('shib')" onchange="update('shib')" id="shibRange"><button style="padding-left: 5px;" class="button_range_minus" onclick="rangeButton('shib', '+')"><i class="fadeIn animated bx bx-caret-right-square"></i></button></div>
+                    </div>
+                </div>
+            </div>
+            <!--end row-->
+            <script>
+                var allPower = 180;
+                var coinPower = {'bnb': 0, 'trx': 0, 'ltc': 0, 'shib': 0,};
+                var freePower = allPower - ( Number(coinPower['bnb']) + Number(coinPower['trx']) + Number(coinPower['ltc']) + Number(coinPower['shib']));
+
+                function power(id){
+                    var value = document.getElementById(id + 'Range').value;
+                    if ((freePower - (value - coinPower[id])) < 0) {
+                        document.getElementById(id + 'Range').value = coinPower[id];
+                    }else{
+                        var value = document.getElementById(id + 'Range').value;
+                        document.getElementById(id + 'Power').innerHTML = value;
+                        document.getElementById(id + 'PowerWithdrawal').innerHTML = value;
+                        coinPower[id] = value;
+                        freePower = allPower - ( Number(coinPower['bnb']) + Number(coinPower['trx']) + Number(coinPower['ltc']) + Number(coinPower['shib']));
+                        document.getElementById('freePower').innerHTML = freePower;
+                    }
+                }
+
+                function rangeButton(currency, direction){
+                    var value = Number(document.getElementById(currency + 'Range').value);
+                    var value_clear = value;
+
+                    if (direction == '+') {
+                        value = value + 1;
+                    } else {
+                        value = value - 1;
+                    }
+
+                    if ((freePower - (value - coinPower[currency])) < 0) {
+                        document.getElementById(currency + 'Range').value = coinPower[id];
+                    }else{
+                        document.getElementById(currency + 'Range').value = value;
+                        document.getElementById(currency + 'Power').innerHTML = value;
+                        document.getElementById(currency + 'PowerWithdrawal').innerHTML = value;
+                        coinPower[currency] = value;
+                        freePower = allPower - ( Number(coinPower['bnb']) + Number(coinPower['trx']) + Number(coinPower['ltc']) + Number(coinPower['shib']));
+                        document.getElementById('freePower').innerHTML = freePower;
+                        update(currency);
+                    }
+                }
+
+                async function update(id){
+                    const currency = id;
+                    const ghs = document.getElementById(id + 'Range').value;
+                    const response = await fetch('/ajax/Distribution.php', {
+                        body: JSON.stringify({currency, ghs }),
+                        method: 'POST'
+                    })
+                    const data = await response.json();
+                    if (data.status == 'error') {
+                        alert(data.message);
+                    }else{
+                        // alert(data.message);
+                    }
+                }
+
+                function number_format( number, decimals, dec_point, thousands_sep ) {  // Format a number with grouped thousands
+                    var i, j, kw, kd, km;
+
+                    if( isNaN(decimals = Math.abs(decimals)) ){
+                        decimals = 2;
+                    }
+                    if( dec_point == undefined ){
+                        dec_point = ".";
+                    }
+                    if( thousands_sep == undefined ){
+                        thousands_sep = "";
+                    }
+
+                    i = parseInt(number = (+number || 0).toFixed(decimals)) + "";
+
+                    if( (j = i.length) > 3 ){
+                        j = j % 3;
+                    } else{
+                        j = 0;
+                    }
+
+                    km = (j ? i.substr(0, j) + thousands_sep : "");
+                    kw = i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands_sep);
+                    //kd = (decimals ? dec_point + Math.abs(number - i).toFixed(decimals).slice(2) : "");
+                    kd = (decimals ? dec_point + Math.abs(number - i).toFixed(decimals).replace(/-/, 0).slice(2) : "");
+
+                    return km + kw + kd;
+                }
+
+                var percent = 0.02;
+
+                var bnbStart = 0.0000000085996;
+                var bnbRate = 0.0041277965821844;
+
+                setInterval(function() {
+                    bnbStart = bnbStart+(((Number((0.025 * coinPower['bnb']) * bnbRate) * percent) / 86400) / 10);
+                    var result = number_format(bnbStart, 13);
+                    document.getElementById("bnbBalance").innerHTML=result.slice(0,15);
+                    document.getElementById("bnbBalanceWithdrawal").innerHTML=result.slice(0,15);
+                }, 100);
+
+                var trxStart = 0.1300075747057;
+                var trxRate = 12.881949811924;
+
+                setInterval(function() {
+                    trxStart = trxStart+(((Number((0.025 * coinPower['trx']) * trxRate) * percent) / 86400) / 10);
+                    var result = number_format(trxStart, 13);
+                    document.getElementById("trxBalance").innerHTML=result.slice(0,15);
+                    document.getElementById("trxBalanceWithdrawal").innerHTML=result.slice(0,15);
+                }, 100);
+
+                var ltcStart = 0.0000000000000;
+                var ltcRate = 0.011951715071113;
+
+                setInterval(function() {
+                    ltcStart = ltcStart+(((Number((0.025 * coinPower['ltc']) * ltcRate) * percent) / 86400) / 10);
+                    var result = number_format(ltcStart, 13);
+                    document.getElementById("ltcBalance").innerHTML=result.slice(0,15);
+                    document.getElementById("ltcBalanceWithdrawal").innerHTML=result.slice(0,15);
+                }, 100);
+
+                var shibStart = 1.5584095103215;
+                var shibRate = 115874.85515643;
+
+                setInterval(function() {
+                    shibStart = shibStart+(((Number((0.025 * coinPower['shib']) * shibRate) * percent) / 86400) / 10);
+                    var result = number_format(shibStart, 13);
+                    document.getElementById("shibBalance").innerHTML=result.slice(0,15);
+                    document.getElementById("shibBalanceWithdrawal").innerHTML=result.slice(0,15);
+                }, 100);
+
+                var wdCurrency = '';
+
+                function withdrawalModal(currency){
+                    document.getElementById('wdDetails').style.display = 'block';
+                    document.getElementById('wdSuccess').style.display = 'none';
+                    wdCurrency = currency;
+                    var amount = Number(document.getElementById(currency + "BalanceWithdrawal").innerHTML);
+                    document.getElementById('wdAmount').innerHTML = number_format(amount, 13);
+                    var network = '';
+                    var minsum = 0;
+                    if (currency == 'bnb') {
+                        network = 'BEP20';
+                        minsum = 0.007;
+                    } else if (currency == 'trx') {
+                        network = 'TRX';
+                        minsum = 45;
+                    } else if (currency == 'ltc') {
+                        network = 'LTC';
+                        minsum = 0.025;
+                    } else {
+                        network = 'BEP20';
+                        minsum = 120000;
+                    }
+                    if (amount >= minsum) {
+                        document.getElementById('wdAddressInput').placeholder = 'Enter your ' + currency.toUpperCase() + ' (' + network + ')' + ' address';
+                        document.getElementById('addressInput').style.display = 'block';
+                        document.getElementById('addressInputDisabled').style.display = 'none';
+                        document.getElementById('wdButton').disabled = false;
+                    } else {
+                        document.getElementById('minSum').innerHTML = minsum + ' ' + currency.toUpperCase();
+                        document.getElementById('wdButton').disabled = true;
+                        document.getElementById('addressInputDisabled').style.display = 'block';
+                        document.getElementById('addressInput').style.display = 'none';
+                    }
+                    document.getElementById('wdCoin').innerHTML = currency.toUpperCase() + ' (' + network + ')';
+                    var myModal = new bootstrap.Modal(document.getElementById('wdModal'));
+                    myModal.show();
+                }
+
+                async function Withdrawal(){
+                    var currency = wdCurrency;
+                    var address = document.getElementById('wdAddressInput').value;
+                    const response = await fetch('/ajax/Withdrawal.php', {
+                        body: JSON.stringify({currency, address }),
+                        method: 'POST'
+                    })
+                    const data = await response.json();
+                    if (data.status != 'error') {
+                        if (currency == 'bnb') {
+                            bnbStart = 0;
+                        } else if (currency == 'trx') {
+                            trxStart = 0;
+                        } else if (currency == 'ltc') {
+                            ltcStart = 0;
+                        } else {
+                            shibStart = 0;
+                        }
+                        document.getElementById('wdSuccessAmount').innerHTML = data.amount;
+                        document.getElementById('wdSuccessCoin').innerHTML = data.system;
+                        document.getElementById('wdButton').disabled = true;
+                        document.getElementById('wdDetails').style.display = 'none';
+                        document.getElementById('wdSuccess').style.display = 'block';
+                    } else {
+                        alert(data.message);
+                    }
+
+                }
+
+                var reinvestCurrency = '';
+
+                function reinvestModal(currency){
+                    document.getElementById('reinvestDetails').style.display = 'block';
+                    document.getElementById('reinvestSuccess').style.display = 'none';
+                    reinvestCurrency = currency;
+                    var amount = Number(document.getElementById(currency + "BalanceWithdrawal").innerHTML);
+                    document.getElementById('wdAmount').innerHTML = number_format(amount, 13);
+                    var network = '';
+                    var minsum = 0;
+                    var ghs = 0;
+                    if (currency == 'bnb') {
+                        minsum = number_format(0.025 / 242.2600000000000, 13);
+                        ghs = Math.round((amount * 242.2600000000000) * 40);
+                    } else if (currency == 'trx') {
+                        minsum = number_format(0.025 / 0.0776280000000, 13);
+                        ghs = Math.round((amount * 0.0776280000000) * 40);
+                    } else if (currency == 'ltc') {
+                        minsum = number_format(0.025 / 83.6700000000000, 13);
+                        ghs = Math.round((amount * 83.6700000000000) * 40);
+                    } else {
+                        minsum = number_format(0.025 / 0.0000086300000, 13);
+                        ghs = Math.round((amount * 0.0000086300000) * 40);
+                    }
+
+                    if (amount >= minsum) {
+                        document.getElementById('reinvestAmount').innerHTML = amount;
+                        document.getElementById('powerReceive').innerHTML = ghs + ' GH/s';
+                        document.getElementById('reinvestFalse').style.display = 'none';
+                        document.getElementById('reinvestTrue').style.display = 'block';
+                        document.getElementById('reinvestButton').disabled = false;
+                    } else {
+                        document.getElementById('reinvestAmount').innerHTML = amount;
+                        document.getElementById('minSumReinvest').innerHTML = minsum + ' ' + currency.toUpperCase();
+                        document.getElementById('reinvestButton').disabled = true;
+                        document.getElementById('reinvestFalse').style.display = 'block';
+                        document.getElementById('reinvestTrue').style.display = 'none';
+                    }
+                    document.getElementById('reinvestCoin').innerHTML = currency.toUpperCase();
+                    var myModal = new bootstrap.Modal(document.getElementById('reinvestModal'));
+                    myModal.show();
+                }
+
+                async function Reinvest(){
+                    var currency = reinvestCurrency;
+                    const response = await fetch('/ajax/Reinvest.php', {
+                        body: JSON.stringify({currency }),
+                        method: 'POST'
+                    })
+                    const data = await response.json();
+                    if (data.status != 'error') {
+                        document.getElementById('wdSuccessAmount').innerHTML = data.amount;
+                        document.getElementById('wdSuccessCoin').innerHTML = data.system;
+
+                        if (currency == 'bnb') {
+                            bnbStart = 0;
+                        } else if (currency == 'trx') {
+                            trxStart = 0;
+                        } else if (currency == 'ltc') {
+                            ltcStart = 0;
+                        } else {
+                            shibStart = 0;
+                        }
+
+                        allPower = allPower + Number(data.ghs);
+                        freePower = freePower  + Number(data.ghs);
+                        document.getElementById('allPower').innerHTML = allPower;
+                        document.getElementById('freePower').innerHTML = freePower;
+                        document.getElementById('reinvestSuccessGhs').innerHTML = data.ghs;
+                        document.getElementById('reinvestButton').disabled = true;
+                        document.getElementById('reinvestDetails').style.display = 'none';
+                        document.getElementById('reinvestSuccess').style.display = 'block';
+                    } else {
+                        alert(data.message);
+                    }
+
+                }
+
+            </script>
+
+            <div class="modal fade" id="wdModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Withdrawal</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="wdDetails">
+                            <div class="mb-3">
+                                <label>Withdrawal amount:</label>
+                                <div class="text-white text-uppercase" id="wdAmount">
+
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label>From coin balance:</label>
+                                <div class="text-white"><span id="wdCoin"></span></div>
+                            </div>
+                            <div class="mb-3" style="display: none;" id="addressInput">
+                                <label for="depositAddressInput">Wallet to receive payment:</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control bg-dark" placeholder="" id="wdAddressInput">
+                                </div>
+                            </div>
+                            <div class="mb-3" style="display: none;" id="addressInputDisabled">
+                                <label for="depositAddressInput">Minimum withdrawal amount:</label>
+                                <div class="text-white text-uppercase" id="minSum">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-body text-center" id="wdSuccess" style="display: none;">
+                            <div class="text-success text-center" style="font-size: 45px;">
+                                <i class="bx bxs-check-circle"></i>
+                                <h5 class="text-success">Successful withdrawal</h5>
+                            </div>
+
+                            <div class="p-4 border border-3 border-success text-center rounded bg-dark"><h5 class="m-0"><span id="wdSuccessAmount"></span><br><span id="wdSuccessCoin"></span></h5></div>
+                            <br>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn bg-gradient-ohhappiness border-0 text-white" onclick="Withdrawal()" id="wdButton">Withdrawal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="reinvestModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Reinvest</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="reinvestDetails">
+                            <div class="mb-3">
+                                <label>Reinvest amount:</label>
+                                <div class="text-white text-uppercase" id="reinvestAmount">
+
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label>From coin balance:</label>
+                                <div class="text-white"><span id="reinvestCoin"></span></div>
+                            </div>
+                            <div class="mb-3" style="display: none;" id="reinvestTrue">
+                                <label for="depositAddressInput">Power receive:</label>
+                                <div class="text-white text-uppercase" id="powerReceive">
+
+                                </div>
+                            </div>
+                            <div class="mb-3" style="display: none;" id="reinvestFalse">
+                                <label for="">Minimum reinvest amount:</label>
+                                <div class="text-white text-uppercase" id="minSumReinvest">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-body text-center" id="reinvestSuccess" style="display: none;">
+                            <div class="text-success text-center" style="font-size: 45px;">
+                                <i class="bx bxs-check-circle"></i>
+                                <h5 class="text-success">Successful reinvest</h5>
+                            </div>
+
+                            <div class="p-4 border border-3 border-success text-center rounded bg-dark"><h5 class="m-0">+<span id="reinvestSuccessGhs"></span> GH/s</h5></div>
+                            <br>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn bg-gradient-ohhappiness border-0 text-white" onclick="Reinvest()" id="reinvestButton">Reinvest</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h6 class="mb-0 text-uppercase mt-3">Account Summary</h6>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+                <div class="col-lg-4 col-xl-4">
+                    <div class="card radius-10">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <p class="mb-0 text-secondary">Total power</p>
+                                    <h4 class="my-1"><span id="allPower">180</span> GH/s</h4>
+                                </div>
+                                <div class="widgets-icons bg-light-success text-success ms-auto"><i class="bx bx-wifi"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-4">
+                    <div class="card radius-10">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <p class="mb-0 text-secondary">Unused power</p>
+                                    <h4 class="my-1"><span id="freePower">180</span> GH/s</h4>
+                                </div>
+                                <div class="widgets-icons bg-light-info text-info ms-auto"><i class="bx bx-wifi-off"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-4">
+                    <div class="card radius-10">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <p class="mb-0 text-secondary">Active plan</p>
+                                    <h4 class="my-1">2%</h4>
+                                </div>
+                                <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class="bx bxs-grid-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container mt-3">
+                    <h6 class="mb-0 text-uppercase">Coin balances</h6>
+                    <hr>
+                    <div class="card bg-lead-card mb-4 radius-10">
+                        <div class="card-body px-0">
+                            <div class="d-flex flex-column flex-sm-row align-items-start justify-content-start px-4">
+                                <div class="d-flex align-items-center flex-grow-1 mb-1 mt-1">
+                                    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=014" class="product-img-2 p-2" alt="product img">
+                                    <div class="ms-4">
+                                        <div class="text-white"><span id="bnbBalanceWithdrawal">0.0000000085996</span></div>
+                                        <div class="text-xs text-muted"><span id="bnbPowerWithdrawal">0</span> GH/s</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-1"><button class="btn bg-gradient-cosmic border-0 text-white mt-2" type="button" onclick="reinvestModal('bnb')">Reinvest</button><button class="btn btn-outline-dark ms-1 mt-2" type="button" onclick="withdrawalModal('bnb')">Withdrawal</button></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex flex-column flex-sm-row align-items-start justify-content-start px-4">
+                                <div class="d-flex align-items-center flex-grow-1 mb-1 mt-1">
+                                    <img src="https://cryptologos.cc/logos/tron-trx-logo.svg?v=014" class="product-img-2 p-2" alt="product img">
+                                    <div class="ms-4">
+                                        <div class="text-white"><span id="trxBalanceWithdrawal">0.1300075747057</span></div>
+                                        <div class="text-xs text-muted"><span id="trxPowerWithdrawal">0</span> GH/s</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-1"><button class="btn bg-gradient-moonlit border-0 text-white mt-2" type="button" onclick="reinvestModal('trx')">Reinvest</button><button class="btn btn-outline-dark ms-1 mt-2" type="button" onclick="withdrawalModal('trx')">Withdrawal</button></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex flex-column flex-sm-row align-items-start justify-content-start px-4">
+                                <div class="d-flex align-items-center flex-grow-1 mb-1 mt-1">
+                                    <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.svg?v=014" class="product-img-2 p-2" alt="product img">
+                                    <div class="ms-4">
+                                        <div class="text-white"><span id="ltcBalanceWithdrawal">0.0000000000000</span></div>
+                                        <div class="text-xs text-muted"><span id="ltcPowerWithdrawal">0</span> GH/s</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-1"><button class="btn bg-gradient-ohhappiness border-0 text-white mt-2" type="button" onclick="reinvestModal('ltc')">Reinvest</button><button class="btn btn-outline-dark ms-1 mt-2" type="button" onclick="withdrawalModal('ltc')">Withdrawal</button></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex flex-column flex-sm-row align-items-start justify-content-start px-4">
+                                <div class="d-flex align-items-center flex-grow-1 mb-1 mt-1">
+                                    <img src="https://cryptologos.cc/logos/shiba-inu-shib-logo.svg?v=014" class="product-img-2 p-2" alt="product img">
+                                    <div class="ms-4">
+                                        <div class="text-white"><span id="shibBalanceWithdrawal">1.5584095103215</span></div>
+                                        <div class="text-xs text-muted"><span id="shibPowerWithdrawal">0</span> GH/s</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-1"><button class="btn bg-gradient-ibiza border-0 text-white mt-2" type="button" onclick="reinvestModal('shib')">Reinvest</button><button class="btn btn-outline-dark ms-1 mt-2" type="button" onclick="withdrawalModal('shib')">Withdrawal</button></div>
+                            </div>
+                            <hr style="display: none;">
+                        </div>
+                        <div class="modal fade" id="reinvestModal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content bg-lead-card">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title">Reinvest</h5>
+                                        <button class="btn-close bg-white" type="button"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <small>Reinvest amount:</small>
+                                            <div class="text-white">0.890175026668</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <small>From coin balance:</small>
+                                            <div class="text-white">TRX</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <small>Power to receive:</small>
+                                            <div class="text-white">3 GH/s </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer border-0 d-flex justify-content-between">
+                                        <div><button class="btn btn-secondary" type="button">Cancel</button><button class="btn btn-primary ms-2" type="button">Reinvest</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="withdrawalModal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content bg-lead-card">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title">Withdrawal</h5>
+                                        <button class="btn-close bg-white" type="button"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <small>Withdrawal amount:</small>
+                                            <div class="text-white">0.890175026668</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <small>From coin balance:</small>
+                                            <div class="text-white">
+                                                TRX <!---->
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <small>Min. withdrawal amount for TRX is:</small>
+                                            <div class="text-white">48.00000000</div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer border-0 d-flex justify-content-between">
+                                        <div><button class="btn btn-secondary" type="button">Cancel</button><button class="btn btn-primary ms-2" type="button" disabled="">Withdraw</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container mt-3">
+                    <h6 class="mb-0 text-uppercase">All transactions</h6>
+                    <hr>
+                    <div class="card radius-10">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table align-middle mb-0">
+                                    <thead class="table-light" style="--bs-table-bg: none;">
+                                    <tr>
+                                        <th></th>
+                                        <th>System</th>
+                                        <th>Time</th>
+                                        <th>Amount</th>
+                                        <th>Hash</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr id="no_incoming">
+                                        <td colspan="8" class="text-center" style="height: 55px;">You have no transactions yet</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end row-->
+        </div>
+    </div>
+    <!--end page wrapper -->
+
+    <!--start overlay-->
+    <div class="overlay toggle-icon"></div>
+    <!--end overlay-->
+    <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+    <!--End Back To Top Button-->
+    <footer class="page-footer">
+        <p class="mb-0">Copyright © 2023. All right reserved.</p> <script id="_waua4i">var _wau = _wau || []; _wau.push(["dynamic", "bggs6kvige", "a4i", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
+    </footer>
+</div>
+<!--end wrapper-->
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<!--plugins-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+<script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="assets/plugins/chartjs/js/Chart.min.js"></script>
+<script src="assets/plugins/chartjs/js/Chart.extension.js"></script>
+<script src="assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
+<!--notification js -->
+<script src="assets/plugins/notifications/js/lobibox.min.js"></script>
+<script src="assets/plugins/notifications/js/notifications.min.js"></script>
+<!-- <script src="/assets/js/index.js"></script> -->
+<!--app JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js" integrity="sha512-9rxMbTkN9JcgG5euudGbdIbhFZ7KGyAuVomdQDI9qXfPply9BJh0iqA7E/moLCatH2JD4xBGHwV6ezBkCpnjRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css" integrity="sha512-V0+DPzYyLzIiMiWCg3nNdY+NyIiK9bED/T1xNBj08CaIUyK3sXRpB26OUCIzujMevxY9TRJFHQIxTwgzb0jVLg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript">
+    $(function() {
+        "use strict";
+
+    });
+</script>
+<script src="assets/js/app.js"></script>
+<script type="text/javascript">
+    function copyText(id) {
+        var text = document.getElementById(id);
+        text.select();
+        document.execCommand("copy");
+    }
+</script>
+</body>
+
+</html>
